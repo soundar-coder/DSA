@@ -1,1 +1,16 @@
- [<img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=white"/>](https://leetcode.com/u/soundarr588/)
+class Solution {
+    public int findTheWinner(int n, int k) {
+        Queue<Integer> s1=new ArrayDeque<>();
+        for(int i=1;i<=n;i++){
+            s1.offer(i);
+        }
+        while(s1.size()>1){
+            for(int i=1;i<k;i++){
+            s1.offer(s1.poll());
+            }
+            s1.poll();
+        }
+       
+      return  s1.poll();
+    }
+}
